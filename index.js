@@ -39,3 +39,16 @@ for (let i = 0; i < buttonOpen.length; i++) {
   btnCloseModal.addEventListener('click', close);
   overlay.addEventListener('click', close);
 }
+
+//Adding esc key functionality when the modal is open and the esc key is pressed
+//there are differeny keys as keypress, keydown and keyup
+
+document.addEventListener('keydown', function (e) {
+  console.log(e);
+  //This if logic is saying if they key pressed was Escape and the
+  //modal class list does not contain hidden so its visible then call the close function
+  //to close the modal
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    close();
+  }
+});
